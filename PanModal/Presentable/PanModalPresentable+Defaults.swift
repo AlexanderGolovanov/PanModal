@@ -49,7 +49,11 @@ public extension PanModalPresentable where Self: UIViewController {
     var backgroundAlpha: CGFloat {
         return 0.7
     }
-
+    
+    var backgroundColor: UIColor? {
+        return UIColor.black
+    }
+    
     var scrollIndicatorInsets: UIEdgeInsets {
         let top = shouldRoundTopCorners ? cornerRadius : 0
         return UIEdgeInsets(top: CGFloat(top), left: 0, bottom: bottomLayoutOffset, right: 0)

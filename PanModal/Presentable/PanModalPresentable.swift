@@ -95,6 +95,15 @@ public protocol PanModalPresentable: AnyObject {
     var backgroundAlpha: CGFloat { get }
 
     /**
+     The background view color.
+     
+     - Note: This is only utilized at the very start of the transition.
+     
+     Default Value is UIColor.black.
+     */
+    var backgroundColor: UIColor? { get }
+    
+    /**
      We configure the panScrollable's scrollIndicatorInsets interally so override this value
      to set custom insets.
 

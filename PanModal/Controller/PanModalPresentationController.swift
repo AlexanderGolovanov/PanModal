@@ -110,6 +110,9 @@ public class PanModalPresentationController: UIPresentationController {
         } else {
             view = DimmedView()
         }
+        if let backgroundColor = presentable?.backgroundColor {
+            view.backgroundColor = backgroundColor
+        }
         view.didTap = { [weak self] _ in
             self?.dismissPresentedViewController()
         }
@@ -368,6 +371,7 @@ private extension PanModalPresentationController {
 
         let adjustedSize = CGSize(width: frame.size.width, height: frame.size.height - anchoredYPosition)
         panContainerView.frame.size = frame.size
+        panContainerView.frame.origin.y = adjustedSize.height - anchoredYPosition
         presentedViewController.view.frame = CGRect(origin: .zero, size: adjustedSize)
     }
 
