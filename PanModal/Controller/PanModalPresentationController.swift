@@ -371,7 +371,7 @@ private extension PanModalPresentationController {
 
         let adjustedSize = CGSize(width: frame.size.width, height: frame.size.height - anchoredYPosition)
         panContainerView.frame.size = frame.size
-        panContainerView.frame.origin.y = adjustedSize.height - anchoredYPosition
+        adjust(toYPosition: longFormYPosition)
         presentedViewController.view.frame = CGRect(origin: .zero, size: adjustedSize)
     }
 
